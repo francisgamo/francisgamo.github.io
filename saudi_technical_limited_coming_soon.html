@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123c70">
+  <meta name="description" content="Saudi Technical Limited — our new website is coming soon.">
+  <title>Coming Soon | Saudi Technical Limited</title>
+  <style>
+    :root {
+      --blue: #1769b2;
+      --blue-dark: #103b70;
+      --blue-deep: #09274b;
+      --gray: #6f7782;
+      --lime: #a8cf38;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      min-height: 100vh;
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      color: #fff;
+      background: var(--blue-deep);
+      overflow-x: hidden;
+    }
+    .page {
+      position: relative;
+      isolation: isolate;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 82% 16%, rgba(36, 123, 201, .38), transparent 36%),
+        radial-gradient(ellipse at 12% 88%, rgba(30, 94, 158, .34), transparent 35%),
+        linear-gradient(135deg, #0a2a50 0%, #123f73 52%, #0a2b50 100%);
+    }
+    .page::before, .page::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      border: 1px solid rgba(255,255,255,.09);
+      transform: rotate(35deg);
+      pointer-events: none;
+    }
+    .page::before {
+      width: 600px; height: 600px; right: -220px; top: -230px;
+      border-radius: 100px;
+      box-shadow: 0 0 0 42px rgba(255,255,255,.018), 0 0 0 86px rgba(255,255,255,.015);
+    }
+    .page::after {
+      width: 360px; height: 360px; left: -190px; bottom: -210px;
+      border-radius: 70px;
+      box-shadow: 0 0 0 35px rgba(255,255,255,.025), 0 0 0 70px rgba(255,255,255,.018);
+    }
+    header {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 34px 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 7px;
+      padding: 9px 13px;
+      max-width: min(390px, 78vw);
+      box-shadow: 0 8px 28px rgba(0,0,0,.12);
+    }
+    .brand img { display: block; width: 100%; height: auto; max-height: 90px; object-fit: contain; }
+    .top-label {
+      color: rgba(255,255,255,.8);
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .19em;
+      white-space: nowrap;
+    }
+    main {
+      flex: 1;
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: center;
+      gap: 44px;
+      padding: 44px 0 74px;
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #c7e76d;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      margin-bottom: 24px;
+    }
+    .eyebrow::before { content: ""; width: 34px; height: 3px; background: var(--lime); border-radius: 2px; }
+    h1 {
+      font-size: clamp(3.3rem, 7.5vw, 6.8rem);
+      line-height: .94;
+      letter-spacing: -.065em;
+      margin: 0;
+      max-width: 700px;
+      font-weight: 800;
+    }
+    h1 span {
+      display: block;
+      color: #b8dc52;
+    }
+    .intro {
+      margin: 28px 0 0;
+      max-width: 530px;
+      font-size: clamp(1rem, 1.7vw, 1.16rem);
+      line-height: 1.8;
+      color: rgba(255,255,255,.78);
+    }
+    .rule {
+      width: 84px;
+      height: 4px;
+      margin-top: 34px;
+      background: linear-gradient(90deg, var(--lime) 0 55%, rgba(255,255,255,.35) 55% 100%);
+      border-radius: 4px;
+    }
+    .visual {
+      min-height: 340px;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+    .orbit {
+      width: min(360px, 75vw);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.17);
+      display: grid;
+      place-items: center;
+      position: relative;
+      box-shadow: 0 0 0 28px rgba(255,255,255,.025), 0 0 0 68px rgba(255,255,255,.018);
+    }
+    .orbit::before {
+      content: "";
+      position: absolute;
+      width: 78%; height: 78%;
+      border: 1px dashed rgba(184,220,82,.45);
+      border-radius: 50%;
+      animation: rotate 32s linear infinite;
+    }
+    .orbit::after {
+      content: "";
+      position: absolute;
+      width: 13px; height: 13px;
+      border-radius: 50%;
+      background: var(--lime);
+      top: 14%; right: 17%;
+      box-shadow: 0 0 24px rgba(184,220,82,.7);
+    }
+    .monogram {
+      width: 58%; aspect-ratio: 1;
+      border-radius: 30% 70% 55% 45% / 42% 35% 65% 58%;
+      background: linear-gradient(145deg, #3f91dc, #1769b2 60%, #0c4a86);
+      display: grid; place-items: center;
+      transform: rotate(-10deg);
+      box-shadow: 0 25px 65px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.35);
+    }
+    .monogram span {
+      font-size: clamp(3.4rem, 8vw, 5.5rem);
+      font-weight: 800;
+      letter-spacing: -.09em;
+      color: #fff;
+      transform: rotate(10deg);
+      text-shadow: 0 4px 14px rgba(0,0,0,.12);
+    }
+    footer {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 22px 0 26px;
+      border-top: 1px solid rgba(255,255,255,.14);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: rgba(255,255,255,.58);
+      font-size: 12px;
+    }
+    .footer-brand { color: rgba(255,255,255,.82); font-weight: 700; letter-spacing: .06em; }
+    @keyframes rotate { to { transform: rotate(360deg); } }
+    @media (max-width: 760px) {
+      header { padding-top: 22px; }
+      .top-label { display: none; }
+      main {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 48px 0 58px;
+      }
+      .visual { min-height: 260px; grid-row: 1; }
+      .orbit { width: 220px; }
+      .monogram span { font-size: 3.5rem; }
+      .eyebrow { margin-bottom: 18px; }
+      .intro { margin-top: 22px; }
+      footer { align-items: flex-start; flex-direction: column; gap: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a class="brand" href="#" aria-label="Saudi Technical Limited home">
+        <img src="data:image/jpeg;base64,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tRvNPsdU3yzXSM0uFZWPXk8V0emaovj74zaXrekWtwNM0q2cSXEsRQMzKwxz/vV7CbS3KhTBFtHIGwYp8cUcS7Y0VB6KMUAPooooAKKKKACiiigArG1rQY9T2XEDm3v4uYp16/Q+orZoqoTcHeJMoqSszyzU9GTWJ5IJYVsddjGSnSO5HqvvXFXFvLazvDPG0ciHDKwwRXu2saLbazbhJgUlTmKZfvIfUGuI1PTheSDTNdCwX4GLXUAPlmHYN79K9jC4xNWf3dvTy/I8zEYbW/8AX/Dnnddd4DjeG9vNTwfLtbdjn1JHArPHg3XTfC1+wyZzjzMfJj1z6V6BZaTa6VYweH7dxLczsJLlh2UHJJ9OmBW+KxEOTli73/LqZYejLn5mrW/M6mzeWSygecKJmjUyBegbHOPxqagDAAFFfPvc9pBRRRSAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKrXthbajbmC6hWSM9j2+npVmimm07oTSejMFfD95CRHb65dx2vTy2UMwHoGPIrR0/S7XTUYQIS7HLyOdzMfcmrtFXKrKSs2SqcU7oKKKKzLCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//2Q==" alt="Saudi Technical Limited logo">
+      </a>
+      <div class="top-label">Building what comes next</div>
+    </header>
+
+    <main>
+      <section aria-labelledby="headline">
+        <div class="eyebrow">A new digital experience</div>
+        <h1 id="headline">Something<br><span>great is</span><br>coming soon.</h1>
+        <p class="intro">We’re working behind the scenes to bring you a refreshed online experience. Saudi Technical Limited will be back soon with more to explore.</p>
+        <div class="rule" aria-hidden="true"></div>
+      </section>
+
+      <div class="visual" aria-hidden="true">
+        <div class="orbit">
+          <div class="monogram"><span>STL</span></div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-brand">SAUDI TECHNICAL LIMITED</div>
+      <div>© <span id="year">2026</span> Saudi Technical Limited. All rights reserved.</div>
+    </footer>
+  </div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
